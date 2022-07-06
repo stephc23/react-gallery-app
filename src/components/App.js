@@ -8,8 +8,8 @@ function App() {
     return (
         <div className="container">
             <SearchForm />
-            {/* <Nav />
-            <PhotoContainer /> */}
+            <Nav />
+            <PhotoContainer />
         </div>
     );
 }

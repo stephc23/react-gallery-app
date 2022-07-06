@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Photo() {
+function Photo({server, id, secret, title}) {
     return (
         <li>
-            <img src="https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg" alt="" />
+            <img src={`https://live.staticflickr.com/${server}/${id}_${secret}.jpg`} alt={`${title}`} />
         </li>
     );
 }

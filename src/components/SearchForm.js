@@ -1,16 +1,16 @@
 import React from 'react';
 
-function SearchForm() {
+function SearchForm({performSearch}) {
     const searchInput = React.createRef();
 
     function handleSubmit(e) {
         e.preventDefault();
-        // Pass searchInput value to perform search function
+        performSearch(searchInput.current.value);
         // e.currentTarget.reset();
     }
 
     return (
-        <form className="search-form">
+        <form className="search-form" onSubmit={handleSubmit}>
             <input type="search" name="search" placeholder="Search" required ref={searchInput}/>
             <button type="submit" className="search-button">
                 <svg fill="#fff" height="24" viewBox="0 0 23 23" width="24" xmlns="http://www.w3.org/2000/svg">

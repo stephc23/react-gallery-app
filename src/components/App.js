@@ -15,7 +15,7 @@ function App() {
     function handlePerformSearch(searchInput) {
         const endpoint = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchInput}&per_page=24&format=json&nojsoncallback=1`;
         fetch(endpoint)
-            .then(response => response.json)
+            .then(response => response.json())
             .then(jsonData => {
                 setPhotos(jsonData.photos.photo);
             })
@@ -28,7 +28,7 @@ function App() {
         <div className="container">
             <SearchForm performSearch={handlePerformSearch}/>
             <Nav />
-            <PhotoContainer />
+            <PhotoContainer photos={photos}/>
         </div>
     );
 }

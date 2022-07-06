@@ -6,7 +6,7 @@ function SearchForm({performSearch}) {
     function handleSubmit(e) {
         e.preventDefault();
         performSearch(searchInput.current.value);
-        // e.currentTarget.reset();
+        e.currentTarget.reset();
     }
 
     return (

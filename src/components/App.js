@@ -6,10 +6,10 @@ import PhotoContainer from './PhotoContainer';
 
 function App() {
     return (
-        <div class="container">
+        <div className="container">
             <SearchForm />
-            <MainNav />
-            <PhotoContainer />
+            {/* <MainNav />
+            <PhotoContainer /> */}
         </div>
     );
 }

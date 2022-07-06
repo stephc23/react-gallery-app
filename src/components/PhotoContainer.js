@@ -3,7 +3,7 @@ import React from 'react';
 import Photo from './Photo';
 import NotFound from './NotFound';
 
-function PhotoContainer({photos}) {
+function PhotoContainer({photos, searchTerm}) {
     const resultsFound = photos.length > 0;
     const photoLis = photos.map(photo => (
         <Photo 
@@ -17,7 +17,7 @@ function PhotoContainer({photos}) {
 
     return (
         <div className="photo-container">
-            <h2>{resultsFound ? 'Results' : ''}</h2>
+            <h2>{resultsFound ? searchTerm : ''}</h2>
             <ul>
                 {resultsFound ? photoLis : <NotFound />}
             </ul>

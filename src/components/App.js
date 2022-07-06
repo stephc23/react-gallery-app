@@ -7,12 +7,14 @@ import PhotoContainer from './PhotoContainer';
 
 function App() {
     const [photos, setPhotos] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         
     });
 
     function handlePerformSearch(searchInput) {
+        setSearchTerm(searchInput);
         const endpoint = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchInput}&per_page=24&format=json&nojsoncallback=1`;
         fetch(endpoint)
             .then(response => response.json())
@@ -28,7 +30,7 @@ function App() {
         <div className="container">
             <SearchForm performSearch={handlePerformSearch}/>
             <Nav />
-            <PhotoContainer photos={photos}/>
+            <PhotoContainer photos={photos} searchTerm={searchTerm} />
         </div>
     );
 }

@@ -1,9 +1,10 @@
 import React from 'react';
 
+// import components
 import Photo from './Photo';
 import NotFound from './NotFound';
 
-function PhotoContainer({photos, searchTerm}) {
+function PhotoContainer({photos, topic}) {
     const resultsFound = photos.length > 0;
     const photoLis = photos.map(photo => (
         <Photo 
@@ -17,7 +18,7 @@ function PhotoContainer({photos, searchTerm}) {
 
     return (
         <div className="photo-container">
-            <h2>{resultsFound ? searchTerm : ''}</h2>
+            <h2>{resultsFound ? topic : ''}</h2>
             <ul>
                 {resultsFound ? photoLis : <NotFound />}
             </ul>

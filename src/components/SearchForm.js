@@ -1,11 +1,14 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 
 function SearchForm({performSearch}) {
     const searchInput = React.createRef();
-
+    const navigate = useNavigate();
+  
     function handleSubmit(e) {
         e.preventDefault();
-        performSearch(searchInput.current.value);
+        const searchValue = searchInput.current.value;
+        navigate(searchValue, {replace: false});
         e.currentTarget.reset();
     }
 

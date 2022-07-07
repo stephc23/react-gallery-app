@@ -5,6 +5,7 @@ function SearchForm() {
     const searchInput = React.createRef();
     const navigate = useNavigate();
   
+    // When form is submitted, redirect to the indicated path, which will cause Gallery to be rendered using the search value.
     function handleSubmit(e) {
         e.preventDefault();
         const searchValue = searchInput.current.value;

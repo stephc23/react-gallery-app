@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
-
-// Import apiKey and component
+import {useParams, useLocation} from 'react-router-dom';
 import apiKey from '../config';
 import PhotoContainer from './PhotoContainer';
 
-function Search() {
+function Gallery() {
     const [photos, setPhotos] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const {topic} = useParams();
+
+    const location = useLocation();
+    let {topic} = useParams();
+    topic = topic ? topic : location.pathname.slice(1);
 
     useEffect(() => {
         const endpoint = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${topic}&per_page=24&format=json&nojsoncallback=1`;
@@ -26,4 +27,4 @@ function Search() {
     return (isLoading ? <p>Loading...</p> : <PhotoContainer photos={photos} topic={topic} />);
 }
 
-export default Search;
+export default Gallery;

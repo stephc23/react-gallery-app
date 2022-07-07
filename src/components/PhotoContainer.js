@@ -1,8 +1,7 @@
 import React from 'react';
-
-// Import components
+import PropTypes from 'prop-types';
 import Photo from './Photo';
-import NotFound from './NotFound';
+import NoResults from './NoResults';
 
 function PhotoContainer({photos, topic}) {
     const resultsFound = photos.length > 0;
@@ -20,10 +19,15 @@ function PhotoContainer({photos, topic}) {
         <div className="photo-container">
             <h2>{resultsFound ? topic : ''}</h2>
             <ul>
-                {resultsFound ? photoLis : <NotFound />}
+                {resultsFound ? photoLis : <NoResults />}
             </ul>
         </div>
     );
 }
+
+PhotoContainer.propTypes = {
+    photos: PropTypes.arrayOf(PropTypes.object),
+    topic: PropTypes.string
+};
 
 export default PhotoContainer;

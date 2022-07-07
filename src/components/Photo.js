@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Photo({server, id, secret, title}) {
     return (
@@ -7,5 +8,12 @@ function Photo({server, id, secret, title}) {
         </li>
     );
 }
+
+Photo.propTypes = {
+    server: PropTypes.string, 
+    id: PropTypes.string, 
+    secret: PropTypes.string, 
+    title: PropTypes.string 
+};
 
 export default Photo;

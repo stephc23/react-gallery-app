@@ -89,8 +89,12 @@ input {
   transform: scale(1.65);
 }
 
-.photo-container .not-found {
+.photo-container .no-results {
   width: 100%;
+}
+
+.page-not-found {
+  margin-top: 75px;
 }
 
 @media only screen and (max-width: 767px)  {

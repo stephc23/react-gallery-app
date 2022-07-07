@@ -1,10 +1,9 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
-
-// Import components
 import SearchForm from './SearchForm';
 import Nav from './Nav';
 import Gallery from './Gallery';
+import PageNotFound from './PageNotFound';
 
 function App() {
     return (
@@ -13,8 +12,12 @@ function App() {
                 <SearchForm />
                 <Nav />
                 <Routes>
-                    <Route path="" element={<Navigate to="cats" replace/> } />
-                    <Route path=":topic" element={<Gallery />} />
+                    <Route path="" element={<Navigate to="cats" replace /> } />
+                    <Route path="cats" element={<Gallery />} />
+                    <Route path="dogs" element={<Gallery />} />
+                    <Route path="birds" element={<Gallery />} />
+                    <Route path="search/:topic" element={<Gallery />} />
+                    <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </div>
         </BrowserRouter>

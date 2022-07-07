@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 
-// import apiKey and component
+// Import apiKey and component
 import apiKey from '../config';
 import PhotoContainer from './PhotoContainer';
 

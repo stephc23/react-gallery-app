@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import components
+// Import components
 import Photo from './Photo';
 import NotFound from './NotFound';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 
-// import components
+// Import components
 import SearchForm from './SearchForm';
 import Nav from './Nav';
 import Gallery from './Gallery';

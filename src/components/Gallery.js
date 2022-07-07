@@ -13,7 +13,7 @@ function Gallery() {
     let {topic} = useParams();
     topic = topic ? topic : location.pathname.slice(1);
 
-    // Use `topic` to fetch photos; update `photos` and `isLoading` states  
+    // Use `topic` to fetch photos and update `photos` and `isLoading` states, only when the value of `topic` changes
     useEffect(() => {
         const endpoint = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${topic}&per_page=24&format=json&nojsoncallback=1`;
         fetch(endpoint)

@@ -7,6 +7,7 @@ import PhotoContainer from './PhotoContainer';
 
 function Search() {
     const [photos, setPhotos] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const {topic} = useParams();
 
     useEffect(() => {
@@ -15,13 +16,14 @@ function Search() {
             .then(response => response.json())
             .then(jsonData => {
                 setPhotos(jsonData.photos.photo);
+                setIsLoading(false);
             })
             .catch(error => {
                 console.log('Error fetching and parsing data', error);
             });
     }, [topic]);
 
-    return (<PhotoContainer photos={photos} topic={topic} />);
+    return (isLoading ? <p>Loading...</p> : <PhotoContainer photos={photos} topic={topic} />);
 }
 
 export default Search;

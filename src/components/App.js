@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Navigate, Outlet} from 'react-router-dom';
 import SearchForm from './SearchForm';
 import Nav from './Nav';
 import Gallery from './Gallery';
@@ -16,6 +16,7 @@ function App() {
                     <Route path="cats" element={<Gallery />} />
                     <Route path="dogs" element={<Gallery />} />
                     <Route path="birds" element={<Gallery />} />
+                    <Route path="search" element={<Outlet />} />
                     <Route path="search/:topic" element={<Gallery />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
